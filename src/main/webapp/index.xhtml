@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions">
+<h:head/>
+<f:view>
+    <h:form>
+        <p:growl id="growl" showDetail="true"/>
+
+        <p:selectOneMenu value="#{bean.selectedModelValue}"
+                         immediate="true"
+                         valueChangeListener="#{bean.handleValueChangeListener}">
+            <p:ajax update="saveButton" global="false" />
+            <p:ajax listener="#{bean.subjectSelectionChanged}" update="saveButton"/>
+            <f:selectItem itemLabel="Do your choose" itemValue="" noSelectionOption="true"/>
+            <f:selectItems value="#{bean.models}" var="model" itemLabel="#{model.value}" itemValue="#{model.value}"/>
+        </p:selectOneMenu>
+
+        <pe:ckEditor toolbar="[['Bold','Italic','Underline','Strike'], ['FontSize', 'TextColor', 'BGColor']]"
+                     value="#{bean.value}">
+            <p:ajax event="change" update="saveButton" global="false"/>
+        </pe:ckEditor>
+
+        <p:panel id="saveButton">
+            <p:commandButton value="Save" disabled="#{bean.disabled()}"/>
+        </p:panel>
+    </h:form>
+</f:view>
+</html>

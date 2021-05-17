@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Primefaces</groupId>
+  <artifactId>test</artifactId>
+  <version>0.0.2</version>
+  <packaging>war</packaging>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <repositories>
+  	<repository>
+  		<id>Custom JasperReports Repository</id>
+  		<url>http://jaspersoft.jfrog.io/jaspersoft/third-party-ce-artifacts/</url>
+  	</repository>
+  </repositories>
+  <dependencies>
+    
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>servlet-api</artifactId>
+		    <version>2.5</version>
+		    <scope>provided</scope>
+		</dependency>
+		
+		<!-- Faces Implementation -->
+		<dependency>
+		    <groupId>com.sun.faces</groupId>
+		    <artifactId>jsf-impl</artifactId>
+		    <version>2.2.8</version>
+		</dependency>
+		<dependency>
+		      <groupId>org.glassfish.web</groupId>
+		      <artifactId>el-impl</artifactId>
+		      <version>2.2</version>
+		 </dependency>
+		 
+		<dependency>
+		  <groupId>javax.faces</groupId>
+		  <artifactId>javax.faces-api</artifactId>
+		  <version>2.2</version>
+		</dependency>
+
+        <!-- Primefaces Version 6-->
+<!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->
+	  <dependency>
+		  <groupId>org.primefaces</groupId>
+		  <artifactId>primefaces</artifactId>
+		  <version>10.0.0</version>
+	  </dependency>
+
+	  <dependency>
+		  <groupId>org.primefaces.extensions</groupId>
+		  <artifactId>primefaces-extensions</artifactId>
+		  <version>10.0.0</version>
+	  </dependency>
+
+	  <dependency>
+		  <groupId>org.primefaces.extensions</groupId>
+		  <artifactId>resources-ckeditor</artifactId>
+		  <version>10.0.0</version>
+	  </dependency>
+		        
+        <!-- JSP Library -->
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>javax.servlet.jsp-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+
+        <!-- JSTL Library -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+	  <!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
+	  <dependency>
+		  <groupId>javax.inject</groupId>
+		  <artifactId>javax.inject</artifactId>
+		  <version>1</version>
+	  </dependency>
+	  <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+	  <dependency>
+		  <groupId>org.projectlombok</groupId>
+		  <artifactId>lombok</artifactId>
+		  <version>1.18.20</version>
+		  <scope>provided</scope>
+	  </dependency>
+
+  </dependencies>
+  <build>
+	  <resources>
+		  <resource>
+			  <directory>java</directory>
+			  <filtering>true</filtering>
+		  </resource>
+	  </resources>
+    <sourceDirectory>src/main/java</sourceDirectory>
+  </build>
+</project>
